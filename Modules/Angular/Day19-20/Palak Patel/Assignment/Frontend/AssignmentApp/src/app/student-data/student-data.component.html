@@ -1,0 +1,28 @@
+<div class="container">
+<table class="table table-hover text-center">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">DOB</th>
+      <th scope="col">Place Of Birth</th>
+      <th scope="col">Language Preference</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <div *ngFor="let items of StudentList">
+      <div *ngFor="let item of items; index as i">
+        <tr>
+          <td scope="row">{{item.studentId}}</td>
+          <td>{{item.Name.FirstName}} {{item.Name.LastName}}</td>
+          <td>{{item.DOB}}</td>
+          <td>{{item.BirthPlace}}</td>
+          <td>{{item.FirstLanguage}}</td>
+          <td><button class="btn btn-primary" (click)="UpdateStudent(item, item.studentId); show()">Update</button></td>
+        </tr>
+      </div>
+    </div>
+  </tbody>
+</table>
+</div>
